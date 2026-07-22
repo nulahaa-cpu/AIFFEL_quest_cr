@@ -1,0 +1,6 @@
+exp,desc,model,clean,decode,BLEU,ROUGE-1,ROUGE-2,ROUGE-L,Distinct-2,train_min
+E0,대조군: 정제 데이터 + KoGPT-2 + LoRA + 샘플링 디코딩,kogpt2,True,sampling,0.1374,0.3099,0.1277,0.2125,0.4675,1.7
+Base,파인튜닝 전 KoGPT-2,kogpt2,-,sampling,0.0515,0.1888,0.0298,0.1063,0.5917,0.0
+E1,정제 OFF: 원본 데이터 그대로 학습 (나머지는 E0과 동일),kogpt2,False,sampling,0.1436,0.3163,0.1346,0.2089,0.5124,2.2
+E4,디코딩 ablation: greedy 고정 (E0 어댑터 재사용),kogpt2,True,greedy,0.135,0.3212,0.148,0.2299,0.4684,0.0
+E5,모델 교체: ko-gpt-trinity-1.2B + 8bit 양자화 + LoRA,trinity,True,sampling,0.1712,0.3501,0.1561,0.2275,0.4632,11.4
